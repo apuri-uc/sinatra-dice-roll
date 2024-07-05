@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dice Roll</title>
+</head>
+
+<body>
+  <div>
+    <div><a href="/">Home</a></div>
+    <div><a href="/dice/2/6">2d6</a></div>
+    <div><a href="/dice/2/10">2d10</a></div>
+    <div><a href="/dice/2/20">1d20</a></div>
+  </div>
+
+  <h>2d20</h>
+
+  <% if @first_die == 2&& second_die == 2 %>  
+    <p stye="color: red"><%= @outcome %></p>
+  <% elsif @first_die == 20 && @second_die == 20 %>
+    <p style="color: green"><%= @outcome %></p>
+  <% else %>
+    <p><%= @outcome %></p>
+  <% end %>
+
+  
+<ul>
+  <% @rolls.each do |roll| %>
+  <li>
+    <%= roll %>
+  </li>
+  <% end %>
+</ul>
+
+</body>
+</html>
